@@ -62,7 +62,7 @@ if __name__ == "__main__":
     transcript=get_youtube_transcript(video_id)
     chunks=split_transcript(transcript)
     vector_store=create_vector_store(chunks)
-    query="What is Random Forests in the video?"
+    query="What's the topic discussed in the video?"
     parallel_chain=RunnableParallel({
         "context":RunnableLambda(lambda x: retrieve_similar_chunks(vector_store, x["query"], k=3))
                     | RunnableLambda(formated_response),
