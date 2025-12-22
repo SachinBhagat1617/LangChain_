@@ -18,9 +18,6 @@ from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 
 load_dotenv()
 
-# ----------------------------------
-# YOUR EXISTING FUNCTIONS (UNCHANGED)
-# ----------------------------------
 
 def extract_video_id(url):
     match = re.search(r"v=([^&]+)", url)
